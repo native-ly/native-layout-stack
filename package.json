@@ -26,6 +26,7 @@
     "vertical",
     "grid",
     "layout",
+    "stack",
     "spacer",
     "react-native",
     "library"
