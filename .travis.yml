@@ -1,0 +1,11 @@
+language: node_js
+
+node_js: node
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - yarn test
+  - bash <(curl -s https://codecov.io/bash)

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack should 1`] = `
+<View
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <Text>
+    World
+  </Text>
+</View>
+`;

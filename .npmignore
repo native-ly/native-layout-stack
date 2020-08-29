@@ -1,0 +1,15 @@
+src
+assets
+__tests__
+coverage
+.jest
+
+tsconfig.json
+.travis.yml
+.prettierrc
+
+.eslintrc.js
+global.d.ts
+yarn-error.log
+babel.config.js
+jest.config.js
