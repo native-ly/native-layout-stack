@@ -15,7 +15,8 @@
     "watch:test": "npm run test -- --watch",
     "lint": "eslint --fix 'src/**/*.{tsx,ts}'",
     "prettier": "prettier --write 'src/**/*.{tsx,ts}'",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,8 @@
     "react": "^16.13.1",
     "react-native": "^0.62.1",
     "react-test-renderer": "^16.13.1",
+    "semantic-release": "^17.1.1",
+    "semantic-release-gitmoji": "^1.3.4",
     "ts-jest": "^26.2.0",
     "typescript": "^4.0.2"
   },
