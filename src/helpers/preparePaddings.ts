@@ -1,9 +1,9 @@
-// import type { Padding } from '../types'
+import type { Padding } from '../types'
 
-export const preparePaddings = (paddings: any) => {
-  // if (typeof paddigns === "number") {
-  //   return { padding: paddigns };
-  // }
+export const preparePaddings = (paddings: Padding) => {
+  if (typeof paddings === 'number') {
+    return { padding: paddings }
+  }
 
   switch (paddings.length) {
     case 2: {
