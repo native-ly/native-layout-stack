@@ -1,17 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { LayoutContext } from '../context'
+import { useStack } from '../hooks'
+
+import type { Padding, Spaces } from '../types'
 
 interface Props {
-  spacing?: number
-  padding?: number
+  readonly spacing?: Spaces
+  readonly padding?: Padding
 }
 
 export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
-  const { debug } = useContext(LayoutContext)
+  const { debug } = useStack()
 
-  const divider = () => {
+  const renderDivider = () => {
     if (typeof spacing !== 'number') {
       return spacing
     }
@@ -26,7 +28,7 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
     )
   }
 
-  const stack = () => {
+  const renderStack = () => {
     // TODO any
     let elements: any[] = Array.isArray(children) ? children : [children]
 
@@ -40,8 +42,8 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
       }
 
       const addSpaces = () => {
-        if (divider) {
-          return React.cloneElement(divider, {
+        if (renderDivider) {
+          return React.cloneElement(renderDivider, {
             key: `stack-divider-${index}`,
           })
         }
@@ -59,5 +61,5 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
     return elements
   }
 
-  return <View style={{ padding }}>{stack}</View>
+  return <View style={{ padding }}>{renderStack}</View>
 }

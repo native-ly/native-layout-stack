@@ -1,11 +1,6 @@
 import React from 'react'
 
-type Spaces = number | [number, number]
-
-type Padding =
-  | Spaces
-  | [number, number, number]
-  | [number, number, number, number]
+import type { Spaces, Padding } from './types'
 
 interface Props {
   readonly debug: boolean

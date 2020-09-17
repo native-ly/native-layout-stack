@@ -1,4 +1,6 @@
-export const addPaddings = (paddigns: any) => {
+// import type { Padding } from '../types'
+
+export const preparePaddings = (paddings: any) => {
   // if (typeof paddigns === "number") {
   //   return { padding: paddigns };
   // }
@@ -29,7 +31,7 @@ export const addPaddings = (paddigns: any) => {
     }
 
     default: {
-      return { padding: paddigns }
+      return { padding: paddings }
     }
   }
 }

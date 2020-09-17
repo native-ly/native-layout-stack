@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-import { LayoutContext } from '../context'
+import { useStack } from '../hooks'
 
 export const Spacer: React.FC = () => {
-  const { debug } = useContext(LayoutContext)
+  const { debug } = useStack()
 
   return (
     <View
