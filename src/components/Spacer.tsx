@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native'
 
 import { useStack } from '../hooks'
 
-export const Spacer: React.FC = () => {
+export const Spacer = () => {
   const { debug } = useStack()
 
   return (

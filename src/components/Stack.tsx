@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import { preparePaddings } from '../helpers/preparePaddings'
 
 import { useStack } from '../hooks'
 
@@ -21,7 +22,11 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
     return (
       <View
         style={StyleSheet.flatten([
-          { padding, width: spacing, height: spacing },
+          {
+            // padding: preparePaddings(padding),
+            width: spacing,
+            height: spacing,
+          },
           debug && { backgroundColor: '#f0f' },
         ])}
       />
@@ -29,8 +34,7 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
   }
 
   const renderStack = () => {
-    // TODO any
-    let elements: any[] = Array.isArray(children) ? children : [children]
+    let elements = Array.isArray(children) ? children : [children]
 
     elements = elements.filter((child) => {
       return Array.isArray(child) || React.isValidElement(child)
@@ -61,5 +65,11 @@ export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
     return elements
   }
 
-  return <View style={{ padding }}>{renderStack}</View>
+  return (
+    <View
+    // style={{ padding: preparePaddings(padding) }}
+    >
+      {renderStack}
+    </View>
+  )
 }
