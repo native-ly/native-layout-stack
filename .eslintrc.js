@@ -12,10 +12,10 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'react/prop-types': 0,
-    'no-unused-vars': ['off'],
-    'react-native/no-unused-styles': 2,
-    'react-native/split-platform-components': 2,
+    'react-native/no-unused-styles': 'error',
+    'react-native/split-platform-components': 'error',
+    'react/prop-types': 'off',
+    'no-unused-vars': 'off',
   },
   parserOptions: {
     ecmaVersion: 6,

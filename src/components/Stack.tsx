@@ -1,17 +1,19 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { preparePaddings } from '../helpers/preparePaddings'
 
 import { useStack } from '../hooks'
+
+import { preparePaddings } from '../helpers/preparePaddings'
 
 import type { Padding, Spaces } from '../types'
 
 interface Props {
+  readonly children: React.ReactNode
   readonly spacing?: Spaces
   readonly padding?: Padding
 }
 
-export const Stack: React.FC<Props> = ({ children, spacing, padding }) => {
+export const Stack = ({ children, spacing, padding }: Props) => {
   const { debug } = useStack()
 
   const renderDivider = () => {
