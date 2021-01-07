@@ -20,16 +20,17 @@ export const Stack = ({
 }: Props) => {
   const globalConfig = useStack()
 
-  const options = Object.assign(globalConfig, { spaces, padding })
+  const stackSpaces = spaces ?? globalConfig.spaces
+  const stackPadding = padding ?? globalConfig.padding
 
   const renderDivider = (): React.ReactElement => (
     <View
       style={StyleSheet.flatten([
         {
-          minWidth: options.spaces,
-          minHeight: options.spaces,
+          minWidth: stackSpaces,
+          minHeight: stackSpaces,
         },
-        options.debug && { backgroundColor: '#f0f' },
+        globalConfig.debug && { backgroundColor: '#f0f' },
       ])}
     />
   )
@@ -48,8 +49,8 @@ export const Stack = ({
 
       const addSpaces = () => {
         if (
-          typeof options.spaces !== 'number' &&
-          typeof options.spaces !== 'string'
+          typeof stackSpaces !== 'number' &&
+          typeof stackSpaces !== 'string'
         ) {
           return []
         }
@@ -66,7 +67,7 @@ export const Stack = ({
   return (
     <View
       {...props}
-      style={StyleSheet.flatten([style, preparePaddings(options.padding || 0)])}
+      style={StyleSheet.flatten([style, preparePaddings(stackPadding || 0)])}
     >
       {renderStack()}
     </View>
