@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stack should 1`] = `
+exports[`Stack should render component matching snapshot 1`] = `
 <View
   style={
     Object {
@@ -14,8 +14,8 @@ exports[`Stack should 1`] = `
   <View
     style={
       Object {
-        "height": 20,
-        "width": 20,
+        "minHeight": 20,
+        "minWidth": 20,
       }
     }
   />
