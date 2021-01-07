@@ -49,8 +49,8 @@ export const Stack = ({
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    return elements.reduce((children, child, index) => {
-      if (!children) {
+    return elements.reduce((children: React.ReactNodeArray, child, index) => {
+      if (children.length === 0) {
         return [child]
       }
 
@@ -64,7 +64,7 @@ export const Stack = ({
         return []
       }
 
-      return [children, addSpaces(), child]
+      return [...children, addSpaces(), child]
     }, [])
   }
 
