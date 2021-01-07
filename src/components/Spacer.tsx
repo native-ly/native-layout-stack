@@ -1,14 +1,18 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { StyleSheet, View, ViewProps } from 'react-native'
 
 import { useStack } from '../hooks'
 
-export const Spacer = () => {
+interface Props extends ViewProps {}
+
+export const Spacer = ({ style, ...props }: Props) => {
   const { debug } = useStack()
 
   return (
     <View
+      {...props}
       style={StyleSheet.flatten([
+        style,
         { flex: 1 },
         debug && { backgroundColor: '#f00' },
       ])}

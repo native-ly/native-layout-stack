@@ -52,6 +52,34 @@ import { Stack, Spacer } from 'native-layout-stack'
 
 ## Options
 
+## Example
+
+```jsx
+
+const MyComponent = () => {
+  return (
+    <Stack padding={[20, 10]} spaces={20}>
+      <View />
+      <View />
+      <View />
+    </Stack>
+  )
+}
+
+const App = () => {
+  return (
+    <LayoutContextProvider options={{
+      spaces: 10,
+      padding: 10,
+    }}>
+      <MyComponent />
+    </LayoutContextProvider>
+  )
+}
+
+export default App
+```
+
 ## License
 
 This project is licensed under the MIT License © 2020-present Jakub Biesiada

@@ -1,15 +1,21 @@
-import type { Padding } from '../types'
+import type { Padding } from '../types/Padding'
 
 export const preparePaddings = (paddings: Padding) => {
-  if (typeof paddings === 'number') {
+  if (typeof paddings === 'number' || typeof paddings === 'string') {
     return { padding: paddings }
   }
 
   switch (paddings.length) {
+    case 1: {
+      return {
+        padding: paddings[0],
+      }
+    }
+
     case 2: {
       return {
-        paddingHorizontal: paddings[0],
-        paddingVertical: paddings[1],
+        paddingVertical: paddings[0],
+        paddingHorizontal: paddings[1],
       }
     }
 
@@ -31,7 +37,7 @@ export const preparePaddings = (paddings: Padding) => {
     }
 
     default: {
-      return { padding: paddings }
+      throw new Error('Unsupported padding value')
     }
   }
 }

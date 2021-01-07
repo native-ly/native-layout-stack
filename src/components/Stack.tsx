@@ -1,35 +1,42 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ViewProps } from 'react-native'
 
 import { useStack } from '../hooks'
 
 import { preparePaddings } from '../helpers/preparePaddings'
 
-import type { Padding, Spaces } from '../types'
+import type { Padding } from '../types/Padding'
 
-interface Props {
-  readonly children: React.ReactNode
-  readonly spacing?: Spaces
+interface Props extends ViewProps {
+  readonly children: React.ReactNode | React.ReactNodeArray
+  readonly spacing?: number
   readonly padding?: Padding
 }
 
-export const Stack = ({ children, spacing, padding }: Props) => {
-  const { debug } = useStack()
+export const Stack = ({
+  children,
+  spacing,
+  padding,
+  style,
+  ...props
+}: Props) => {
+  const globalConfig = useStack()
 
-  const renderDivider = () => {
-    if (typeof spacing !== 'number') {
-      return spacing
-    }
+  const options = Object.assign(globalConfig, { spacing, padding })
+
+  const renderDivider = (): React.ReactElement => {
+    // if (typeof options.spacing !== 'number') {
+    //   return options.spacing
+    // }
 
     return (
       <View
         style={StyleSheet.flatten([
           {
-            // padding: preparePaddings(padding),
-            width: spacing,
-            height: spacing,
+            width: options.spacing,
+            height: options.spacing,
           },
-          debug && { backgroundColor: '#f0f' },
+          options.debug && { backgroundColor: '#f0f' },
         ])}
       />
     )
@@ -42,14 +49,14 @@ export const Stack = ({ children, spacing, padding }: Props) => {
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    elements = elements.reduce((children, child, index) => {
-      if (children.length === 0) {
-        return [child]
-      }
+    return elements.reduce((children, child, index) => {
+      // if (children?.length === 0) {
+      //   return [child]
+      // }
 
       const addSpaces = () => {
         if (renderDivider) {
-          return React.cloneElement(renderDivider, {
+          return React.cloneElement(renderDivider(), {
             key: `stack-divider-${index}`,
           })
         }
@@ -57,21 +64,16 @@ export const Stack = ({ children, spacing, padding }: Props) => {
         return []
       }
 
-      return [
-        ...children,
-        // ...addSpaces(),
-        child,
-      ]
+      return [children, addSpaces(), child]
     }, [])
-
-    return elements
   }
 
   return (
     <View
-    // style={{ padding: preparePaddings(padding) }}
+      {...props}
+      style={StyleSheet.flatten([style, preparePaddings(options.padding || 0)])}
     >
-      {renderStack}
+      {renderStack()}
     </View>
   )
 }

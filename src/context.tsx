@@ -1,10 +1,10 @@
 import React from 'react'
 
-import type { Spaces, Padding } from './types'
+import type { Padding } from './types/Padding'
 
-interface Props {
+export interface Props {
   readonly debug: boolean
-  readonly spaces?: Spaces
+  readonly spaces?: number
   readonly padding?: Padding
 }
 
@@ -14,6 +14,9 @@ export const LayoutContext = React.createContext<Props>({
   padding: undefined,
 })
 
-export const ContextProvider: React.FC<Props> = ({ children, ...props }) => (
-  <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>
-)
+LayoutContext.displayName = 'LayoutContext'
+
+export const LayoutContextProvider: React.FC<Props> = ({
+  children,
+  ...props
+}) => <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>

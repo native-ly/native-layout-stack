@@ -1,13 +1,5 @@
-import { useContext } from 'react'
+import { useSafeContext } from 'react-safe-context-hooks'
 
 import { LayoutContext } from '../context'
 
-export const useStack = () => {
-  const context = useContext(LayoutContext)
-
-  if (context === undefined) {
-    throw new Error('LayoutContext is not defined')
-  }
-
-  return context
-}
+export const useStack = () => useSafeContext(LayoutContext)
