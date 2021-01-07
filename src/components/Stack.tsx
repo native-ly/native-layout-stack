@@ -50,9 +50,9 @@ export const Stack = ({
     })
 
     return elements.reduce((children, child, index) => {
-      // if (children?.length === 0) {
-      //   return [child]
-      // }
+      if (!children) {
+        return [child]
+      }
 
       const addSpaces = () => {
         if (renderDivider) {
