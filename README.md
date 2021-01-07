@@ -55,7 +55,6 @@ import { Stack, Spacer } from 'native-layout-stack'
 ## Example
 
 ```jsx
-
 const MyComponent = () => {
   return (
     <Stack padding={[20, 10]} spaces={20}>
@@ -68,10 +67,7 @@ const MyComponent = () => {
 
 const App = () => {
   return (
-    <LayoutContextProvider options={{
-      spaces: 10,
-      padding: 10,
-    }}>
+    <LayoutContextProvider spaces={10} padding={20}>
       <MyComponent />
     </LayoutContextProvider>
   )
