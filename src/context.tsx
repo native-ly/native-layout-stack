@@ -3,7 +3,7 @@ import React from 'react'
 import type { Padding } from './types/Padding'
 
 export interface Props {
-  readonly debug: boolean
+  readonly debug?: boolean
   readonly spaces?: number
   readonly padding?: Padding
 }
