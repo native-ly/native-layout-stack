@@ -1,6 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Spacer should render component without provider 1`] = `
+exports[`Spacer should render component with context provider 1`] = `
+Array [
+  <Text>
+    Hello
+  </Text>,
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />,
+  <Text>
+    World
+  </Text>,
+]
+`;
+
+exports[`Spacer should render component with custom styles 1`] = `
+Array [
+  <Text>
+    Hello
+  </Text>,
+  <View
+    style={
+      Object {
+        "backgroundColor": "orange",
+        "flex": 1,
+      }
+    }
+  />,
+  <Text>
+    World
+  </Text>,
+]
+`;
+
+exports[`Spacer should render component with debug mode enabled 1`] = `
+Array [
+  <Text>
+    Hello
+  </Text>,
+  <View
+    style={
+      Object {
+        "backgroundColor": "#f00",
+        "flex": 1,
+      }
+    }
+  />,
+  <Text>
+    World
+  </Text>,
+]
+`;
+
+exports[`Spacer should render component without context provider 1`] = `
 Array [
   <Text>
     Hello

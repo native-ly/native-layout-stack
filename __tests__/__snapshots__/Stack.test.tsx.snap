@@ -1,6 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stack should render component matching snapshot 1`] = `
+exports[`Stack should overwrite global options 1`] = `
+<View
+  style={
+    Object {
+      "padding": 16,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 12,
+        "minWidth": 12,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "padding": 30,
+      }
+    }
+  >
+    <Text>
+      World
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Stack should render component with context provider 1`] = `
+<View
+  style={
+    Object {
+      "padding": 30,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 15,
+        "minWidth": 15,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack should render component with custom styles 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "green",
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack should render component with debug mode enabled 1`] = `
+<View
+  style={
+    Object {
+      "padding": 30,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#f0f",
+        "minHeight": 15,
+        "minWidth": 15,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack should render component without context provider 1`] = `
 <View
   style={
     Object {
