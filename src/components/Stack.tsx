@@ -33,8 +33,8 @@ export const Stack = ({
       <View
         style={StyleSheet.flatten([
           {
-            width: options.spacing,
-            height: options.spacing,
+            minWidth: options.spacing,
+            minHeight: options.spacing,
           },
           options.debug && { backgroundColor: '#f0f' },
         ])}
