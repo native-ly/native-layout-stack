@@ -1,11 +1,9 @@
 import React from 'react'
 
-import type { Padding } from './types/Padding'
+import { BaseProps } from './interfaces/BaseProps'
 
-export interface Props {
+export interface Props extends BaseProps {
   readonly debug?: boolean
-  readonly spaces?: number
-  readonly padding?: Padding
 }
 
 export const LayoutContext = React.createContext<Props>({
