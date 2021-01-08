@@ -1,2 +1,2 @@
-export { LayoutContextProvider } from './context'
+export { LayoutProvider } from './context'
 export * from './components'

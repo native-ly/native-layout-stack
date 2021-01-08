@@ -14,7 +14,6 @@ export const LayoutContext = React.createContext<Props>({
 
 LayoutContext.displayName = 'LayoutContext'
 
-export const LayoutContextProvider: React.FC<Props> = ({
-  children,
-  ...props
-}) => <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>
+export const LayoutProvider: React.FC<Props> = ({ children, ...props }) => (
+  <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>
+)

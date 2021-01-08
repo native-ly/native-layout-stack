@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from 'react-native'
 import { render } from '@testing-library/react-native'
 
-import { Stack, LayoutContextProvider } from '../src'
+import { Stack, LayoutProvider } from '../src'
 
 const BareComponent = () => (
   <Stack>
@@ -43,9 +43,9 @@ describe('Stack', () => {
 
   it('should render component with context provider', () => {
     const { toJSON } = render(
-      <LayoutContextProvider spaces={15} padding={30}>
+      <LayoutProvider spaces={15} padding={30}>
         <BareComponent />
-      </LayoutContextProvider>
+      </LayoutProvider>
     )
 
     expect(toJSON()).toMatchSnapshot()
@@ -53,9 +53,9 @@ describe('Stack', () => {
 
   it('should render component with debug mode enabled', () => {
     const { toJSON } = render(
-      <LayoutContextProvider spaces={15} padding={30} debug>
+      <LayoutProvider spaces={15} padding={30} debug>
         <BareComponent />
-      </LayoutContextProvider>
+      </LayoutProvider>
     )
 
     expect(toJSON()).toMatchSnapshot()
@@ -73,9 +73,9 @@ describe('Stack', () => {
     )
 
     const { toJSON } = render(
-      <LayoutContextProvider spaces={15} padding={30}>
+      <LayoutProvider spaces={15} padding={30}>
         <Component />
-      </LayoutContextProvider>
+      </LayoutProvider>
     )
 
     expect(toJSON()).toMatchSnapshot()

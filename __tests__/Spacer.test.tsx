@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from 'react-native'
 import { render } from '@testing-library/react-native'
 
-import { Spacer, LayoutContextProvider } from '../src'
+import { Spacer, LayoutProvider } from '../src'
 
 describe('Spacer', () => {
   it('should render component without context provider', () => {
@@ -45,9 +45,9 @@ describe('Spacer', () => {
     )
 
     const { toJSON } = render(
-      <LayoutContextProvider>
+      <LayoutProvider>
         <Component />
-      </LayoutContextProvider>
+      </LayoutProvider>
     )
 
     expect(toJSON()).toMatchSnapshot()
@@ -65,9 +65,9 @@ describe('Spacer', () => {
     )
 
     const { toJSON } = render(
-      <LayoutContextProvider debug>
+      <LayoutProvider debug>
         <Component />
-      </LayoutContextProvider>
+      </LayoutProvider>
     )
 
     expect(toJSON()).toMatchSnapshot()

@@ -47,7 +47,7 @@ $ yarn add native-layout-stack
 **• Connect libary with project using ES6 import:**
 
 ```js
-import { Stack, Spacer } from 'native-layout-stack'
+import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 ```
 
 ## Options
@@ -67,9 +67,9 @@ const MyComponent = () => {
 
 const App = () => {
   return (
-    <LayoutContextProvider spaces={10} padding={20}>
+    <LayoutProvider spaces={10} padding={20}>
       <MyComponent />
-    </LayoutContextProvider>
+    </LayoutProvider>
   )
 }
 
