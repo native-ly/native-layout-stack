@@ -16,10 +16,12 @@
 This library recreates SwiftUI components in React Native:
 
 **Stack**
+
 - [HStack](https://developer.apple.com/documentation/swiftui/hstack/)
 - [VStack](https://developer.apple.com/documentation/swiftui/vstack/)
 
 **Spacer**
+
 - [Spacer](https://developer.apple.com/documentation/swiftui/spacer/)
 
 ### Alternatives
@@ -52,9 +54,38 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 ## Options
 
+### LayoutProvider
+
+| **name** | **type**                                                                                    | **description** |
+| -------- | ------------------------------------------------------------------------------------------- | --------------- |
+| padding  | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
+| spaces   | Space                                                                                       |                 |
+| debug    | boolean                                                                                     |                 |
+
+### Stack
+
+Stack extends ViewProps
+
+| **name** | **type**                                                                                    | **description** |
+| -------- | ------------------------------------------------------------------------------------------- | --------------- |
+| padding  | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
+| spaces   | Space                                                                                       |                 |
+
+### Spacer
+
+ViewProps
+
+### types
+
+| **name** | **type**         |
+| -------- | ---------------- |
+| Space    | number or string |
+
 ## Example
 
 ```jsx
+import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
+
 const MyComponent = () => {
   return (
     <Stack padding={[20, 10]} spaces={20}>
