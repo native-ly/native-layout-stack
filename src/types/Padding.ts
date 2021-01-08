@@ -1,8 +1,8 @@
-type SinglePadding = number | string
+export type SingleSize = number | string
 
 export type Padding =
-  | SinglePadding
-  | [SinglePadding]
-  | [SinglePadding, SinglePadding]
-  | [SinglePadding, SinglePadding, SinglePadding]
-  | [SinglePadding, SinglePadding, SinglePadding, SinglePadding]
+  | SingleSize
+  | [SingleSize]
+  | [SingleSize, SingleSize]
+  | [SingleSize, SingleSize, SingleSize]
+  | [SingleSize, SingleSize, SingleSize, SingleSize]

@@ -1,6 +1,6 @@
-import type { Padding } from '../types/Padding'
+import type { SingleSize, Padding } from '../types/Padding'
 
 export interface BaseProps {
-  readonly spaces?: number
+  readonly spaces?: SingleSize
   readonly padding?: Padding
 }
