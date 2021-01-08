@@ -1,5 +1,348 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Stack  1`] = `
+<View
+  style={
+    Object {
+      "padding": 12,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  2`] = `
+<View
+  style={
+    Object {
+      "padding": 12,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  3`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 6,
+      "paddingVertical": 12,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  4`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": 15,
+      "paddingHorizontal": 10,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  5`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": 30,
+      "paddingLeft": 40,
+      "paddingRight": 20,
+      "paddingTop": 10,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  6`] = `
+<View
+  style={
+    Object {
+      "padding": "12",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  7`] = `
+<View
+  style={
+    Object {
+      "padding": "12",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  8`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": "6",
+      "paddingVertical": "12",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  9`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": "15",
+      "paddingHorizontal": "10",
+      "paddingTop": "5",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  10`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": "30",
+      "paddingLeft": "40",
+      "paddingRight": "20",
+      "paddingTop": "10",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  11`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 6,
+      "paddingVertical": "12",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  12`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": "15",
+      "paddingHorizontal": "10",
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack  13`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": 30,
+      "paddingLeft": "40",
+      "paddingRight": 20,
+      "paddingTop": "10",
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
 exports[`Stack should overwrite global options 1`] = `
 <View
   style={
@@ -101,6 +444,32 @@ exports[`Stack should render component with debug mode enabled 1`] = `
         "backgroundColor": "#f0f",
         "minHeight": 15,
         "minWidth": 15,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
+exports[`Stack should render component with horizontal layout 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
       }
     }
   />

@@ -81,8 +81,63 @@ describe('Stack', () => {
     expect(toJSON()).toMatchSnapshot()
   })
 
-  // TODO different padding values
-  // it.each()
+  it.each([
+    12,
+    [12],
+    [12, 6],
+    [5, 10, 15],
+    [10, 20, 30, 40],
+    '12',
+    ['12'],
+    ['12', '6'],
+    ['5', '10', '15'],
+    ['10', '20', '30', '40'],
+    ['12', 6],
+    [5, '10', '15'],
+    ['10', 20, 30, '40'],
+  ])('', (padding: any) => {
+    const { toJSON } = render(
+      <Stack spaces={20} padding={padding}>
+        <Text>Hello</Text>
 
-  // TODO horizontal stack (flexDirection row)
+        <Text>World</Text>
+      </Stack>
+    )
+
+    expect(toJSON()).toMatchSnapshot()
+  })
+
+  // TODO update test
+  it.skip('sholud throw an error', () => {
+    render(
+      <Stack padding={[1, 2, 3, 4, 5] as any}>
+        <Text>Hello</Text>
+
+        <Text>World</Text>
+      </Stack>
+    )
+  })
+
+  // TODO update test
+  it.skip('sholud throw an error', () => {
+    render(
+      <Stack spaces={[] as any}>
+        <Text>Hello</Text>
+
+        <Text>World</Text>
+      </Stack>
+    )
+  })
+
+  it('should render component with horizontal layout', () => {
+    const { toJSON } = render(
+      <Stack spaces={20} padding={10} style={{ flexDirection: 'row' }}>
+        <Text>Hello</Text>
+
+        <Text>World</Text>
+      </Stack>
+    )
+
+    expect(toJSON()).toMatchSnapshot()
+  })
 })
