@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { StyleSheet, View, ViewProps } from 'react-native'
 
 import { useStack } from '../hooks'
@@ -20,7 +20,6 @@ export const Stack = ({
 }: Props) => {
   const globalConfig = useStack()
 
-  // TODO refactor
   const stackSpaces = spaces ?? globalConfig.spaces
   const stackPadding = padding ?? globalConfig.padding
 
@@ -31,21 +30,18 @@ export const Stack = ({
           minWidth: stackSpaces,
           minHeight: stackSpaces,
         },
-        // TODO random color
         globalConfig.debug && { backgroundColor: '#f0f' },
       ])}
     />
   )
 
-  const renderStack = useCallback(() => {
-    // TODO const
+  const renderStack = () => {
     let elements = Array.isArray(children) ? children : [children]
 
     elements = elements.filter((child) => {
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    // TODO move to new function/split
     return elements.reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {
         return [child]
@@ -66,8 +62,7 @@ export const Stack = ({
 
       return [...children, addSpaces(), child]
     }, [])
-    // TODO fix updaters
-  }, [])
+  }
 
   return (
     <View
