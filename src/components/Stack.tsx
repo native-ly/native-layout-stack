@@ -1,77 +1,80 @@
-import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import React, { useCallback } from 'react'
+import { StyleSheet, View, ViewProps } from 'react-native'
 
 import { useStack } from '../hooks'
 
 import { preparePaddings } from '../helpers/preparePaddings'
 
-import type { Padding, Spaces } from '../types'
+import { BaseProps } from '../interfaces/BaseProps'
 
-interface Props {
-  readonly children: React.ReactNode
-  readonly spacing?: Spaces
-  readonly padding?: Padding
+interface Props extends ViewProps, BaseProps {
+  readonly children: React.ReactNode | React.ReactNodeArray
 }
 
-export const Stack = ({ children, spacing, padding }: Props) => {
-  const { debug } = useStack()
+export const Stack = ({
+  children,
+  spaces,
+  padding,
+  style,
+  ...props
+}: Props) => {
+  const globalConfig = useStack()
 
-  const renderDivider = () => {
-    if (typeof spacing !== 'number') {
-      return spacing
-    }
+  // TODO refactor
+  const stackSpaces = spaces ?? globalConfig.spaces
+  const stackPadding = padding ?? globalConfig.padding
 
-    return (
-      <View
-        style={StyleSheet.flatten([
-          {
-            // padding: preparePaddings(padding),
-            width: spacing,
-            height: spacing,
-          },
-          debug && { backgroundColor: '#f0f' },
-        ])}
-      />
-    )
-  }
+  const renderDivider = (): React.ReactElement => (
+    <View
+      style={StyleSheet.flatten([
+        {
+          minWidth: stackSpaces,
+          minHeight: stackSpaces,
+        },
+        // TODO random color
+        globalConfig.debug && { backgroundColor: '#f0f' },
+      ])}
+    />
+  )
 
-  const renderStack = () => {
+  const renderStack = useCallback(() => {
+    // TODO const
     let elements = Array.isArray(children) ? children : [children]
 
     elements = elements.filter((child) => {
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    elements = elements.reduce((children, child, index) => {
+    // TODO move to new function/split
+    return elements.reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {
         return [child]
       }
 
       const addSpaces = () => {
-        if (renderDivider) {
-          return React.cloneElement(renderDivider, {
-            key: `stack-divider-${index}`,
-          })
+        if (
+          typeof stackSpaces !== 'number' &&
+          typeof stackSpaces !== 'string'
+        ) {
+          return []
         }
 
-        return []
+        return React.cloneElement(renderDivider(), {
+          key: `stack-divider-${index}`,
+        })
       }
 
-      return [
-        ...children,
-        // ...addSpaces(),
-        child,
-      ]
+      return [...children, addSpaces(), child]
     }, [])
-
-    return elements
-  }
+    // TODO fix updaters
+  }, [])
 
   return (
     <View
-    // style={{ padding: preparePaddings(padding) }}
+      {...props}
+      style={StyleSheet.flatten([style, preparePaddings(stackPadding || 0)])}
     >
-      {renderStack}
+      {renderStack()}
     </View>
   )
 }

@@ -1,11 +1,9 @@
 import React from 'react'
 
-import type { Spaces, Padding } from './types'
+import { BaseProps } from './interfaces/BaseProps'
 
-interface Props {
-  readonly debug: boolean
-  readonly spaces?: Spaces
-  readonly padding?: Padding
+export interface Props extends BaseProps {
+  readonly debug?: boolean
 }
 
 export const LayoutContext = React.createContext<Props>({
@@ -14,6 +12,8 @@ export const LayoutContext = React.createContext<Props>({
   padding: undefined,
 })
 
-export const ContextProvider: React.FC<Props> = ({ children, ...props }) => (
+LayoutContext.displayName = 'LayoutContext'
+
+export const LayoutProvider: React.FC<Props> = ({ children, ...props }) => (
   <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>
 )

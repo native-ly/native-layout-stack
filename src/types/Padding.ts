@@ -1,6 +1,8 @@
-import type { Spaces } from '.'
+type SinglePadding = number | string
 
 export type Padding =
-  | Spaces
-  | [number, number, number]
-  | [number, number, number, number]
+  | SinglePadding
+  | [SinglePadding]
+  | [SinglePadding, SinglePadding]
+  | [SinglePadding, SinglePadding, SinglePadding]
+  | [SinglePadding, SinglePadding, SinglePadding, SinglePadding]

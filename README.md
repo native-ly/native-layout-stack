@@ -47,10 +47,34 @@ $ yarn add native-layout-stack
 **• Connect libary with project using ES6 import:**
 
 ```js
-import { Stack, Spacer } from 'native-layout-stack'
+import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 ```
 
 ## Options
+
+## Example
+
+```jsx
+const MyComponent = () => {
+  return (
+    <Stack padding={[20, 10]} spaces={20}>
+      <View />
+      <View />
+      <View />
+    </Stack>
+  )
+}
+
+const App = () => {
+  return (
+    <LayoutProvider spaces={10} padding={20}>
+      <MyComponent />
+    </LayoutProvider>
+  )
+}
+
+export default App
+```
 
 ## License
 
