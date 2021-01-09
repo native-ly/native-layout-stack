@@ -23,30 +23,6 @@ export const Stack = ({
   const stackSpaces = spaces ?? globalConfig.spaces
   const stackPadding = padding ?? globalConfig.padding
 
-  const renderDivider = (): React.ReactElement => (
-    <View
-      style={StyleSheet.flatten([
-        {
-          minWidth: stackSpaces,
-          minHeight: stackSpaces,
-        },
-        globalConfig.debug && { backgroundColor: '#f0f' },
-      ])}
-    />
-  )
-
-  const isSpacer = () => {
-    return typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
-  }
-
-  const addSpaces = (index: number) => {
-    if (!isSpacer()) return []
-
-    return React.cloneElement(renderDivider(), {
-      key: `stack-divider-${index}`,
-    })
-  }
-
   const renderStack = () => {
     let elements = Array.isArray(children) ? children : [children]
 
@@ -62,6 +38,30 @@ export const Stack = ({
       return [...children, addSpaces(index), child]
     }, [])
   }
+
+  const addSpaces = (index: number) => {
+    if (!isSpacer()) return []
+
+    return React.cloneElement(renderDivider(), {
+      key: `stack-divider-${index}`,
+    })
+  }
+
+  const isSpacer = () => {
+    return typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
+  }
+
+  const renderDivider = (): React.ReactElement => (
+    <View
+      style={StyleSheet.flatten([
+        {
+          minWidth: stackSpaces,
+          minHeight: stackSpaces,
+        },
+        globalConfig.debug && { backgroundColor: '#f0f' },
+      ])}
+    />
+  )
 
   return (
     <View
