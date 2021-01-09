@@ -24,9 +24,9 @@ export const Stack = ({
   const stackPadding = padding ?? globalConfig.padding
 
   const renderDivider = (): React.ReactElement => {
-    // if (stackSpaces) {
-    //   return stackSpaces
-    // }
+    if (typeof stackSpaces !== 'number' && typeof stackSpaces !== 'string') {
+      return stackSpaces as React.ReactElement
+    }
 
     return (
       <View
@@ -54,13 +54,6 @@ export const Stack = ({
       }
 
       const addSpaces = () => {
-        if (
-          typeof stackSpaces !== 'number' &&
-          typeof stackSpaces !== 'string'
-        ) {
-          return []
-        }
-
         return React.cloneElement(renderDivider(), {
           key: `stack-divider-${index}`,
         })
