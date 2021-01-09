@@ -23,17 +23,23 @@ export const Stack = ({
   const stackSpaces = spaces ?? globalConfig.spaces
   const stackPadding = padding ?? globalConfig.padding
 
-  const renderDivider = (): React.ReactElement => (
-    <View
-      style={StyleSheet.flatten([
-        {
-          minWidth: stackSpaces,
-          minHeight: stackSpaces,
-        },
-        globalConfig.debug && { backgroundColor: '#f0f' },
-      ])}
-    />
-  )
+  const renderDivider = (): React.ReactElement => {
+    // if (stackSpaces) {
+    //   return stackSpaces
+    // }
+
+    return (
+      <View
+        style={StyleSheet.flatten([
+          {
+            minWidth: stackSpaces,
+            minHeight: stackSpaces,
+          },
+          globalConfig.debug && { backgroundColor: '#f0f' },
+        ])}
+      />
+    )
+  }
 
   const renderStack = () => {
     let elements = Array.isArray(children) ? children : [children]
