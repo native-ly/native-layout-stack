@@ -35,6 +35,18 @@ export const Stack = ({
     />
   )
 
+  const isSpacer = () => {
+    return typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
+  }
+
+  const addSpaces = (index: number) => {
+    if (!isSpacer()) return []
+
+    return React.cloneElement(renderDivider(), {
+      key: `stack-divider-${index}`,
+    })
+  }
+
   const renderStack = () => {
     let elements = Array.isArray(children) ? children : [children]
 
@@ -47,20 +59,7 @@ export const Stack = ({
         return [child]
       }
 
-      const addSpaces = () => {
-        if (
-          typeof stackSpaces !== 'number' &&
-          typeof stackSpaces !== 'string'
-        ) {
-          return []
-        }
-
-        return React.cloneElement(renderDivider(), {
-          key: `stack-divider-${index}`,
-        })
-      }
-
-      return [...children, addSpaces(), child]
+      return [...children, addSpaces(index), child]
     }, [])
   }
 
