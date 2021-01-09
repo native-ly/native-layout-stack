@@ -73,7 +73,7 @@ Stack extends ViewProps
 
 ### Spacer
 
-ViewProps
+Component uses ViewProps
 
 ### types
 
