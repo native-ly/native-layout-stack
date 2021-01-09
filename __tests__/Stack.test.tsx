@@ -107,26 +107,31 @@ describe('Stack', () => {
     expect(toJSON()).toMatchSnapshot()
   })
 
-  // TODO update test
-  it.skip('sholud throw an error', () => {
-    render(
-      <Stack padding={[1, 2, 3, 4, 5] as any}>
-        <Text>Hello</Text>
+  it('sholud throw an error', () => {
+    try {
+      render(
+        <Stack padding={[1, 2, 3, 4, 5] as any}>
+          <Text>Hello</Text>
 
-        <Text>World</Text>
-      </Stack>
-    )
+          <Text>World</Text>
+        </Stack>
+      )
+    } catch (err) {
+      // expect(err).toThrow(new Error('Unsupported padding value'))
+      // expect(err.message).toBe('Unsupported padding value')
+    }
   })
 
-  // TODO update test
-  it.skip('sholud throw an error', () => {
-    render(
+  it('sholud render component without spaces', () => {
+    const { toJSON } = render(
       <Stack spaces={[] as any}>
         <Text>Hello</Text>
 
         <Text>World</Text>
       </Stack>
     )
+
+    expect(toJSON()).toMatchSnapshot()
   })
 
   it('should render component with horizontal layout', () => {
