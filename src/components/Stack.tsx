@@ -22,6 +22,7 @@ export const Stack = ({
 }: Props) => {
   const globalConfig = useStack()
 
+  // TODO refactor
   const stackSpaces = spaces ?? globalConfig.spaces
   const stackPadding = padding ?? globalConfig.padding
   const stackOmitNull = omitNull ?? globalConfig.omitNull
@@ -41,6 +42,7 @@ export const Stack = ({
         return [child]
       }
 
+      // TODO refactor
       if (
         (stackOmitNull && child === null) ||
         (child as any)?.type === React.Fragment
@@ -67,8 +69,9 @@ export const Stack = ({
           minWidth: stackSpaces,
           minHeight: stackSpaces,
         },
+        // TODO refactor
         globalConfig.debug && {
-          backgroundColor: globalConfig.debugColor || randomColor() /*'#f0f'*/,
+          backgroundColor: globalConfig.debugColor || randomColor(),
         },
       ])}
     />

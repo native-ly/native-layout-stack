@@ -15,6 +15,7 @@ export const Spacer = ({ style, ...props }: Props) => {
       style={StyleSheet.flatten([
         style,
         { flex: 1 },
+        // TODO refactor
         debug && { backgroundColor: debugColor },
       ])}
     />
