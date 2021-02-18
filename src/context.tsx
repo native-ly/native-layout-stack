@@ -11,6 +11,7 @@ export const LayoutContext = React.createContext<Props>({
   arrayDivision: undefined,
   padding: undefined,
   spaces: undefined,
+  omitNull: undefined,
 })
 
 LayoutContext.displayName = 'LayoutContext'

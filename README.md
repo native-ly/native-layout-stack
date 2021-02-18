@@ -56,20 +56,24 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 ### LayoutProvider
 
-| **name** | **type**                                                                                    | **description** |
-| -------- | ------------------------------------------------------------------------------------------- | --------------- |
-| padding  | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
-| spaces   | Space                                                                                       |                 |
-| debug    | boolean                                                                                     |                 |
+| **name**      | **type**                                                                                    | **description** |
+| ------------- | ------------------------------------------------------------------------------------------- | --------------- |
+| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
+| spaces        | Space                                                                                       |                 |
+| omitNull      | boolean                                                                                     |                 |
+| arrayDivision | boolean                                                                                     |                 |
+| debug         | boolean                                                                                     |                 |
 
 ### Stack
 
 Stack extends ViewProps
 
-| **name** | **type**                                                                                    | **description** |
-| -------- | ------------------------------------------------------------------------------------------- | --------------- |
-| padding  | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
-| spaces   | Space                                                                                       |                 |
+| **name**      | **type**                                                                                    | **description** |
+| ------------- | ------------------------------------------------------------------------------------------- | --------------- |
+| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
+| spaces        | Space                                                                                       |                 |
+| omitNull      | boolean                                                                                     |                 |
+| arrayDivision | boolean                                                                                     |                 |
 
 ### Spacer
 

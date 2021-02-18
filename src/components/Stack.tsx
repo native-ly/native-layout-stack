@@ -40,7 +40,11 @@ export const Stack = ({
         return [child]
       }
 
-      if (stackOmitNull && child === null) {
+      if (
+        stackOmitNull &&
+        child === null
+        // || (child instanceof React. && child?.type === React.Fragment)
+      ) {
         return [...children, child]
       }
 

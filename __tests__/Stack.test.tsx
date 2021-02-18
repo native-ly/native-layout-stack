@@ -145,4 +145,10 @@ describe('Stack', () => {
 
     expect(toJSON()).toMatchSnapshot()
   })
+
+  // TODO
+  it.skip('should test arrayDivision', () => {})
+
+  // TODO
+  it.skip('should test omitNull', () => {})
 })
