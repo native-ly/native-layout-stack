@@ -42,9 +42,8 @@ export const Stack = ({
       }
 
       if (
-        stackOmitNull &&
-        child === null
-        // || (child instanceof React. && child?.type === React.Fragment)
+        (stackOmitNull && child === null) ||
+        (child as any)?.type === React.Fragment
       ) {
         return [...children, child]
       }

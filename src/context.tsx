@@ -4,6 +4,7 @@ import { BaseProps } from './interfaces/BaseProps'
 
 export interface Props extends BaseProps {
   readonly debug?: boolean
+  readonly debugColor?: string
 }
 
 export const LayoutContext = React.createContext<Props>({
@@ -14,7 +15,7 @@ export const LayoutContext = React.createContext<Props>({
   // omitElements: [null, React.Fragment],
   // omitElements: React.Fragment,
   debug: false,
-  // debugColor: undefined,
+  debugColor: undefined,
   // debugColor: {
   //   stack: '#f00',
   //   spacer: '#000',

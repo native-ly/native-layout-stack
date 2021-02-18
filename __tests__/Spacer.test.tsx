@@ -4,6 +4,8 @@ import { render } from '@testing-library/react-native'
 
 import { Spacer, LayoutProvider } from '../src'
 
+jest.mock('randomcolor', () => () => '#d259ff')
+
 describe('Spacer', () => {
   it('should render component without context provider', () => {
     const { toJSON } = render(
