@@ -37,12 +37,14 @@
   },
   "homepage": "https://github.com/native-ly/native-layout-stack#readme",
   "dependencies": {
+    "randomcolor": "^0.6.2",
     "react-safe-context-hooks": "^1.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-native": "^3.4.3",
     "@testing-library/react-native": "^7.1.0",
     "@types/jest": "^26.0.20",
+    "@types/randomcolor": "^0.5.5",
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.45",
     "@typescript-eslint/parser": "^4.12.0",
