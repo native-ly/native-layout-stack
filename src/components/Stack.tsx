@@ -13,35 +13,18 @@ interface Props extends ViewProps, BaseProps {
 
 export const Stack = ({
   children,
-  arrayDivision,
-  padding,
   spaces,
+  padding,
   style,
   ...props
 }: Props) => {
   const globalConfig = useStack()
 
-  const stackArrayDivision = arrayDivision || globalConfig.arrayDivision
-  const stackPadding = padding ?? globalConfig.padding
   const stackSpaces = spaces ?? globalConfig.spaces
+  const stackPadding = padding ?? globalConfig.padding
 
-  const renderDivider = (): React.ReactElement => {
-    if (typeof stackSpaces !== 'number' && typeof stackSpaces !== 'string') {
-      return stackSpaces as React.ReactElement
-    }
-
-    return (
-      <View
-        style={StyleSheet.flatten([
-          {
-            minWidth: stackSpaces,
-            minHeight: stackSpaces,
-          },
-          globalConfig.debug && { backgroundColor: '#f0f' },
-        ])}
-      />
-    )
-  }
+  const isSpacer =
+    typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
 
   const renderStack = () => {
     let elements = Array.isArray(children) ? children : [children]
@@ -50,28 +33,34 @@ export const Stack = ({
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    elements = elements.reduce(
-      (children: React.ReactNodeArray, child) =>
-        stackArrayDivision && Array.isArray(child)
-          ? [...children, ...child]
-          : [...children, child],
-      []
-    )
-
     return elements.reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {
         return [child]
       }
 
-      const addSpaces = () => {
-        return React.cloneElement(renderDivider(), {
-          key: `stack-divider-${index}`,
-        })
-      }
-
-      return [...children, addSpaces(), child]
+      return [...children, addSpaces(index), child]
     }, [])
   }
+
+  const addSpaces = (index: number) => {
+    if (!isSpacer) return []
+
+    return React.cloneElement(renderDivider(), {
+      key: `stack-divider-${index}`,
+    })
+  }
+
+  const renderDivider = (): React.ReactElement => (
+    <View
+      style={StyleSheet.flatten([
+        {
+          minWidth: stackSpaces,
+          minHeight: stackSpaces,
+        },
+        globalConfig.debug && { backgroundColor: '#f0f' },
+      ])}
+    />
+  )
 
   return (
     <View
