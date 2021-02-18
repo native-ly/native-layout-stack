@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, ViewProps } from 'react-native'
+import randomColor from 'randomcolor'
 
 import { useStack } from '../hooks'
 
@@ -41,9 +42,8 @@ export const Stack = ({
       }
 
       if (
-        stackOmitNull &&
-        child === null
-        // || (child instanceof React. && child?.type === React.Fragment)
+        (stackOmitNull && child === null) ||
+        (child as any)?.type === React.Fragment
       ) {
         return [...children, child]
       }
@@ -67,7 +67,9 @@ export const Stack = ({
           minWidth: stackSpaces,
           minHeight: stackSpaces,
         },
-        globalConfig.debug && { backgroundColor: '#f0f' },
+        globalConfig.debug && {
+          backgroundColor: globalConfig.debugColor || randomColor() /*'#f0f'*/,
+        },
       ])}
     />
   )

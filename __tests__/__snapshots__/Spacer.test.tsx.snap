@@ -45,7 +45,7 @@ Array [
   <View
     style={
       Object {
-        "backgroundColor": "#f00",
+        "backgroundColor": "#d259ff",
         "flex": 1,
       }
     }

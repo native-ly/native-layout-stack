@@ -393,6 +393,32 @@ exports[`Stack should overwrite global options 1`] = `
 </View>
 `;
 
+exports[`Stack should render component with arrayDivision 1`] = `
+<View
+  arrayDivision={true}
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Hello
+  </Text>
+  <View
+    style={
+      Object {
+        "minHeight": 20,
+        "minWidth": 20,
+      }
+    }
+  />
+  <Text>
+    World
+  </Text>
+</View>
+`;
+
 exports[`Stack should render component with context provider 1`] = `
 <View
   style={
@@ -458,7 +484,7 @@ exports[`Stack should render component with debug mode enabled 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#f0f",
+        "backgroundColor": "#4951c6",
         "minHeight": 15,
         "minWidth": 15,
       }
@@ -517,6 +543,20 @@ exports[`Stack should render component without context provider 1`] = `
   />
   <Text>
     World
+  </Text>
+</View>
+`;
+
+exports[`Stack should test omitNull 1`] = `
+<View
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Hello
   </Text>
 </View>
 `;

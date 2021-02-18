@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, View, ViewProps } from 'react-native'
+import randomColor from 'randomcolor'
 
 import { useStack } from '../hooks'
 
 interface Props extends ViewProps {}
 
 export const Spacer = ({ style, ...props }: Props) => {
-  const { debug } = useStack()
+  const { debug, debugColor = randomColor() } = useStack()
 
   return (
     <View
@@ -14,7 +15,7 @@ export const Spacer = ({ style, ...props }: Props) => {
       style={StyleSheet.flatten([
         style,
         { flex: 1 },
-        debug && { backgroundColor: '#f00' },
+        debug && { backgroundColor: debugColor },
       ])}
     />
   )

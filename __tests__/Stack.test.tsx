@@ -4,6 +4,8 @@ import { render } from '@testing-library/react-native'
 
 import { Stack, LayoutProvider } from '../src'
 
+jest.mock('randomcolor', () => () => '#4951c6')
+
 const BareComponent = () => (
   <Stack>
     <Text>Hello</Text>
@@ -147,8 +149,30 @@ describe('Stack', () => {
   })
 
   // TODO
-  it.skip('should test arrayDivision', () => {})
+  it('should render component with arrayDivision', () => {
+    const { toJSON } = render(
+      <Stack spaces={20} padding={10} arrayDivision>
+        <Text>Hello</Text>
+
+        <Text>World</Text>
+      </Stack>
+    )
+
+    expect(toJSON()).toMatchSnapshot()
+  })
 
   // TODO
-  it.skip('should test omitNull', () => {})
+  it('should test omitNull', () => {
+    const { toJSON } = render(
+      <Stack spaces={20} padding={10} omitNull>
+        <Text>Hello</Text>
+
+        {null}
+
+        <></>
+      </Stack>
+    )
+
+    expect(toJSON()).toMatchSnapshot()
+  })
 })
