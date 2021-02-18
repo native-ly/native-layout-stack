@@ -1,6 +1,9 @@
+import React from 'react'
+
 import type { SingleSize, Padding } from '../types/Padding'
 
 export interface BaseProps {
-  readonly spaces?: SingleSize
+  readonly arrayDivision?: boolean
   readonly padding?: Padding
+  readonly spaces?: SingleSize
 }
