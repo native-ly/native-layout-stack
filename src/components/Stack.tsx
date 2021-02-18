@@ -13,15 +13,17 @@ interface Props extends ViewProps, BaseProps {
 
 export const Stack = ({
   children,
-  spaces,
+  arrayDivision,
   padding,
+  spaces,
   style,
   ...props
 }: Props) => {
   const globalConfig = useStack()
 
-  const stackSpaces = spaces ?? globalConfig.spaces
+  const stackArrayDivision = arrayDivision || globalConfig.arrayDivision
   const stackPadding = padding ?? globalConfig.padding
+  const stackSpaces = spaces ?? globalConfig.spaces
 
   const renderDivider = (): React.ReactElement => {
     if (typeof stackSpaces !== 'number' && typeof stackSpaces !== 'string') {
@@ -47,6 +49,14 @@ export const Stack = ({
     elements = elements.filter((child) => {
       return Array.isArray(child) || React.isValidElement(child)
     })
+
+    elements = elements.reduce(
+      (children: React.ReactNodeArray, child) =>
+        stackArrayDivision && Array.isArray(child)
+          ? [...children, ...child]
+          : [...children, child],
+      []
+    )
 
     return elements.reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {

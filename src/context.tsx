@@ -8,8 +8,9 @@ export interface Props extends BaseProps {
 
 export const LayoutContext = React.createContext<Props>({
   debug: false,
-  spaces: undefined,
+  arrayDivision: undefined,
   padding: undefined,
+  spaces: undefined,
 })
 
 LayoutContext.displayName = 'LayoutContext'
