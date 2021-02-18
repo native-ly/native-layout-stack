@@ -15,6 +15,7 @@ export const Stack = ({
   children,
   spaces,
   padding,
+  omitNull,
   style,
   ...props
 }: Props) => {
@@ -22,6 +23,7 @@ export const Stack = ({
 
   const stackSpaces = spaces ?? globalConfig.spaces
   const stackPadding = padding ?? globalConfig.padding
+  const stackOmitNull = omitNull ?? globalConfig.omitNull
 
   const isSpacer =
     typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
@@ -36,6 +38,10 @@ export const Stack = ({
     return elements.reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {
         return [child]
+      }
+
+      if (stackOmitNull && child === null) {
+        return [...children, child]
       }
 
       return [...children, addSpaces(index), child]

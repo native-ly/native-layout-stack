@@ -5,5 +5,6 @@ import type { SingleSize, Padding } from '../types/Padding'
 export interface BaseProps {
   readonly arrayDivision?: boolean
   readonly padding?: Padding
+  readonly omitNull?: boolean
   readonly spaces?: SingleSize
 }
