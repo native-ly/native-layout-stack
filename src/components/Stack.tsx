@@ -80,7 +80,10 @@ export const Stack = ({
   return (
     <View
       {...props}
-      style={StyleSheet.flatten([style, preparePaddings(stackPadding || 0)])}
+      style={StyleSheet.flatten([
+        style,
+        preparePaddings(stackPadding || 0, globalConfig.debug),
+      ])}
     >
       {renderStack()}
     </View>

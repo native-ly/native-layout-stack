@@ -2,7 +2,8 @@ import randomColor from 'randomcolor'
 
 import type { Padding } from '../types/Padding'
 
-export const preparePaddings = (paddings: Padding, debug: boolean) => {
+// TODO refactor, any type
+export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
   const color = randomColor()
 
   if (typeof paddings === 'number' || typeof paddings === 'string') {
