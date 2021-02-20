@@ -4,6 +4,7 @@ import { render } from '@testing-library/react-native'
 
 import { Stack, LayoutProvider } from '../src'
 
+// TODO?
 jest.mock('randomcolor', () => () => '#4951c6')
 
 const BareComponent = () => (

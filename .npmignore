@@ -2,6 +2,7 @@ src
 assets
 __tests__
 coverage
+.husky
 .jest
 
 tsconfig.json
