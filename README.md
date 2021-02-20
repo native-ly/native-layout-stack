@@ -58,11 +58,11 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 | **name**      | **type**                                                                                    | **description** |
 | ------------- | ------------------------------------------------------------------------------------------- | --------------- |
-| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
-| spaces        | Space                                                                                       |                 |
-| omitNull      | boolean                                                                                     |                 |
+| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] | Outer space                |
+| spaces        | Space                                                                                       | Space between children                |
+| omitNull      | boolean                                                                                     | Skip elements that are `null` or `React.Fragment`                |
 | arrayDivision | boolean                                                                                     |                 |
-| debug         | boolean                                                                                     |                 |
+| debug         | boolean                                                                                     | Add random color to spaces                |
 
 ### Stack
 
