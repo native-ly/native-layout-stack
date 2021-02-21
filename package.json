@@ -1,6 +1,6 @@
 {
   "name": "native-layout-stack",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.4",
   "description": "SwiftUI like layout management",
   "author": "Jakub Biesiada",
   "license": "MIT",

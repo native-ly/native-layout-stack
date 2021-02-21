@@ -2,12 +2,14 @@ import randomColor from 'randomcolor'
 
 import type { Padding } from '../types/Padding'
 
-// TODO refactor, any type
+// TODO refactor, any type, add returned type
 export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
   const color = randomColor()
 
   if (typeof paddings === 'number' || typeof paddings === 'string') {
-    return { padding: paddings, borderWidth: paddings, borderColor: color }
+    return debug
+      ? { borderWidth: paddings, borderColor: color }
+      : { padding: paddings }
   }
 
   switch (paddings.length) {
@@ -16,6 +18,7 @@ export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
         ? {
             borderWidth: paddings[0],
             borderColor: color,
+            // padding: 0, // TODO
           }
         : {
             padding: paddings[0],
@@ -28,7 +31,7 @@ export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
             borderTopWidth: paddings[0],
             borderBottomWidth: paddings[0],
             borderLeftWidth: paddings[1],
-            borderRigthWidth: paddings[1],
+            borderRightWidth: paddings[1],
             borderColor: color,
           }
         : {
@@ -42,7 +45,7 @@ export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
         ? {
             borderTopWidth: paddings[0],
             borderLeftWidth: paddings[1],
-            borderRigthWidth: paddings[1],
+            borderRightWidth: paddings[1],
             borderBottomWidth: paddings[2],
             borderColor: color,
           }
@@ -57,7 +60,7 @@ export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
       return debug
         ? {
             borderTopWidth: paddings[0],
-            borderRigthWidth: paddings[1],
+            borderRightWidth: paddings[1],
             borderBottomWidth: paddings[2],
             borderLeftWidth: paddings[3],
             borderColor: color,

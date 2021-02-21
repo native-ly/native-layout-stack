@@ -4,8 +4,6 @@ exports[`Stack  1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 12,
       "padding": 12,
     }
   }
@@ -137,8 +135,6 @@ exports[`Stack  6`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": "12",
       "padding": "12",
     }
   }
@@ -351,8 +347,6 @@ exports[`Stack sholud render component without spaces 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 0,
       "padding": 0,
     }
   }
@@ -370,8 +364,6 @@ exports[`Stack should overwrite global options 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 16,
       "padding": 16,
     }
   }
@@ -390,8 +382,6 @@ exports[`Stack should overwrite global options 1`] = `
   <View
     style={
       Object {
-        "borderColor": "#4951c6",
-        "borderWidth": 30,
         "padding": 30,
       }
     }
@@ -408,8 +398,6 @@ exports[`Stack should render component with arrayDivision 1`] = `
   arrayDivision={true}
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 10,
       "padding": 10,
     }
   }
@@ -435,8 +423,6 @@ exports[`Stack should render component with context provider 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 30,
       "padding": 30,
     }
   }
@@ -463,8 +449,6 @@ exports[`Stack should render component with custom styles 1`] = `
   style={
     Object {
       "backgroundColor": "green",
-      "borderColor": "#4951c6",
-      "borderWidth": 10,
       "padding": 10,
     }
   }
@@ -492,7 +476,6 @@ exports[`Stack should render component with debug mode enabled 1`] = `
     Object {
       "borderColor": "#4951c6",
       "borderWidth": 30,
-      "padding": 30,
     }
   }
 >
@@ -518,8 +501,6 @@ exports[`Stack should render component with horizontal layout 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 10,
       "flexDirection": "row",
       "padding": 10,
     }
@@ -546,8 +527,6 @@ exports[`Stack should render component without context provider 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 10,
       "padding": 10,
     }
   }
@@ -573,8 +552,6 @@ exports[`Stack should test omitNull 1`] = `
 <View
   style={
     Object {
-      "borderColor": "#4951c6",
-      "borderWidth": 10,
       "padding": 10,
     }
   }
