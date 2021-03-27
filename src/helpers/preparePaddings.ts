@@ -1,9 +1,13 @@
 import randomColor from 'randomcolor'
+import { ViewStyle } from 'react-native'
 
 import type { Padding } from '../types/Padding'
 
 // TODO refactor, any type, add returned type
-export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
+export const preparePaddings = (
+  paddings: Padding,
+  debug?: boolean
+): ViewStyle => {
   const color = randomColor()
 
   if (typeof paddings === 'number' || typeof paddings === 'string') {
@@ -16,6 +20,7 @@ export const preparePaddings = (paddings: Padding, debug?: boolean): any => {
     case 1: {
       return debug
         ? {
+            // TODO parseFloat
             borderWidth: paddings[0],
             borderColor: color,
             // padding: 0, // TODO

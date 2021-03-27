@@ -56,30 +56,23 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 ### LayoutProvider
 
-| **name**      | **type**                                                                                    | **description** |
-| ------------- | ------------------------------------------------------------------------------------------- | --------------- |
-| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] | Outer space                |
-| spaces        | Space                                                                                       | Space between children                |
-| omitNull      | boolean                                                                                     | Skip elements that are `null` or `React.Fragment`                |
-| arrayDivision | boolean                                                                                     |                 |
-| debug         | boolean                                                                                     | Add random color to spaces                |
+| **name**      | **type**                                                                                    | **description**                                   |
+| ------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] | Outer space                                       |
+| spaces        | Space                                                                                       | Space between children                            |
+| omitNull      | boolean                                                                                     | Skip elements that are `null` or `React.Fragment` |
+| arrayDivision | boolean                                                                                     |                                                   |
+| debug         | boolean                                                                                     | Add random color to spaces                        |
 
 ### Stack
 
-Stack extends ViewProps
-
-| **name**      | **type**                                                                                    | **description** |
-| ------------- | ------------------------------------------------------------------------------------------- | --------------- |
-| padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] |                 |
-| spaces        | Space                                                                                       |                 |
-| omitNull      | boolean                                                                                     |                 |
-| arrayDivision | boolean                                                                                     |                 |
+Stack extends ViewProps and implements all [`LayoutProvider`](#layoutprovider) props without `debug`
 
 ### Spacer
 
 Component uses ViewProps
 
-### types
+### Types
 
 | **name** | **type**         |
 | -------- | ---------------- |
