@@ -5,7 +5,7 @@
 [![NPM license](https://img.shields.io/npm/l/native-layout-stack?style=flat-square)](https://www.npmjs.com/package/native-layout-stack)
 [![run in expo snack](https://img.shields.io/badge/Run%20in%20Snack-4630EB?style=flat-square&logo=EXPO&labelColor=FFF&logoColor=000)](https://snack.expo.io/@jbiesiada/native-layout-stack)
 [![Codecov](https://img.shields.io/codecov/c/github/native-ly/native-layout-stack?style=flat-square)](https://codecov.io/gh/native-ly/native-layout-stack)
-[![Travis](https://img.shields.io/travis/native-ly/native-layout-stack/master?style=flat-square)](https://travis-ci.org/native-ly/native-layout-stack)
+[![Travis](https://img.shields.io/travis/com/native-ly/native-layout-stack/master?style=flat-square)](https://travis-ci.com/native-ly/native-layout-stack)
 
 ## About
 
