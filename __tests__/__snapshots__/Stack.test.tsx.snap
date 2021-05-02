@@ -135,7 +135,7 @@ exports[`Stack  6`] = `
 <View
   style={
     Object {
-      "padding": "12",
+      "padding": 12,
     }
   }
 >
@@ -160,7 +160,7 @@ exports[`Stack  7`] = `
 <View
   style={
     Object {
-      "padding": "12",
+      "padding": 12,
     }
   }
 >
@@ -185,8 +185,8 @@ exports[`Stack  8`] = `
 <View
   style={
     Object {
-      "paddingHorizontal": "6",
-      "paddingVertical": "12",
+      "paddingHorizontal": 6,
+      "paddingVertical": 12,
     }
   }
 >
@@ -211,9 +211,9 @@ exports[`Stack  9`] = `
 <View
   style={
     Object {
-      "paddingBottom": "15",
-      "paddingHorizontal": "10",
-      "paddingTop": "5",
+      "paddingBottom": 15,
+      "paddingHorizontal": 10,
+      "paddingTop": 5,
     }
   }
 >
@@ -238,10 +238,10 @@ exports[`Stack  10`] = `
 <View
   style={
     Object {
-      "paddingBottom": "30",
-      "paddingLeft": "40",
-      "paddingRight": "20",
-      "paddingTop": "10",
+      "paddingBottom": 30,
+      "paddingLeft": 40,
+      "paddingRight": 20,
+      "paddingTop": 10,
     }
   }
 >
@@ -267,7 +267,7 @@ exports[`Stack  11`] = `
   style={
     Object {
       "paddingHorizontal": 6,
-      "paddingVertical": "12",
+      "paddingVertical": 12,
     }
   }
 >
@@ -292,8 +292,8 @@ exports[`Stack  12`] = `
 <View
   style={
     Object {
-      "paddingBottom": "15",
-      "paddingHorizontal": "10",
+      "paddingBottom": 15,
+      "paddingHorizontal": 10,
       "paddingTop": 5,
     }
   }
@@ -320,9 +320,9 @@ exports[`Stack  13`] = `
   style={
     Object {
       "paddingBottom": 30,
-      "paddingLeft": "40",
+      "paddingLeft": 40,
       "paddingRight": 20,
-      "paddingTop": "10",
+      "paddingTop": 10,
     }
   }
 >
