@@ -1,4 +1,4 @@
-import { SingleSize } from '../types/Padding'
+import type { SingleSize } from '../types/Padding'
 
 export const typeSafePaddings = (padding: SingleSize) => {
   if (typeof padding === 'string') {
