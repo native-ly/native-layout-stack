@@ -23,14 +23,14 @@
     "url": "https://github.com/native-ly/native-layout-stack.git"
   },
   "keywords": [
-    "horizontal",
-    "vertical",
-    "grid",
-    "layout",
-    "stack",
-    "spacer",
+    "library",
     "react-native",
-    "library"
+    "grid",
+    "stack",
+    "layout",
+    "vertical",
+    "horizontal",
+    "spacer"
   ],
   "bugs": {
     "url": "https://github.com/native-ly/native-layout-stack/issues"
