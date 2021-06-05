@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { StyleSheet, View, ViewProps } from 'react-native'
 import randomColor from 'randomcolor'
 
@@ -23,14 +23,55 @@ export const Stack = ({
   const globalConfig = useStack()
 
   // TODO refactor
-  const stackSpaces = spaces ?? globalConfig.spaces
-  const stackPadding = padding ?? globalConfig.padding
-  const stackOmitNull = omitNull ?? globalConfig.omitNull
+  const stackSpaces = useMemo(
+    () => spaces ?? globalConfig.spaces,
+    [globalConfig.spaces, spaces]
+  )
 
-  const isSpacer =
-    typeof stackSpaces === 'number' || typeof stackSpaces === 'string'
+  const stackPadding = useMemo(
+    () => padding ?? globalConfig.padding,
+    [globalConfig.padding, padding]
+  )
+  const stackOmitNull = useMemo(
+    () => omitNull ?? globalConfig.omitNull,
+    [globalConfig.omitNull, omitNull]
+  )
 
-  const renderStack = () => {
+  const isSpacer = useMemo(
+    () => typeof stackSpaces === 'number' || typeof stackSpaces === 'string',
+    [stackSpaces]
+  )
+
+  const renderDivider = useCallback(
+    (): React.ReactElement => (
+      <View
+        style={StyleSheet.flatten([
+          {
+            minWidth: stackSpaces,
+            minHeight: stackSpaces,
+          },
+          // TODO refactor
+          globalConfig.debug && {
+            backgroundColor: globalConfig.debugColor || randomColor(),
+          },
+        ])}
+      />
+    ),
+    [globalConfig.debug, globalConfig.debugColor, stackSpaces]
+  )
+
+  const addSpaces = useCallback(
+    (index: number) => {
+      if (!isSpacer) return []
+
+      return React.cloneElement(renderDivider(), {
+        key: `stack-divider-${index}`,
+      })
+    },
+    [isSpacer, renderDivider]
+  )
+
+  const renderStack = useCallback(() => {
     let elements = Array.isArray(children) ? children : [children]
 
     elements = elements.filter((child) => {
@@ -52,30 +93,7 @@ export const Stack = ({
 
       return [...children, addSpaces(index), child]
     }, [])
-  }
-
-  const addSpaces = (index: number) => {
-    if (!isSpacer) return []
-
-    return React.cloneElement(renderDivider(), {
-      key: `stack-divider-${index}`,
-    })
-  }
-
-  const renderDivider = (): React.ReactElement => (
-    <View
-      style={StyleSheet.flatten([
-        {
-          minWidth: stackSpaces,
-          minHeight: stackSpaces,
-        },
-        // TODO refactor
-        globalConfig.debug && {
-          backgroundColor: globalConfig.debugColor || randomColor(),
-        },
-      ])}
-    />
-  )
+  }, [addSpaces, children, stackOmitNull])
 
   return (
     <View
