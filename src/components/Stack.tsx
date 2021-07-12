@@ -12,6 +12,14 @@ interface Props extends ViewProps, BaseProps {
   readonly children: React.ReactNode | React.ReactNodeArray
 }
 
+const shouldIncludeNode = (element: any) => {
+  if (element && typeof element === "object") {
+    return Children.toArray(element.children).some(shouldIncludeNode);
+  }
+
+  return !!element;
+}
+
 export const Stack = ({
   children,
   spaces,
@@ -78,7 +86,7 @@ export const Stack = ({
       return Array.isArray(child) || React.isValidElement(child)
     })
 
-    return elements.reduce((children: React.ReactNodeArray, child, index) => {
+    return elements.filter(shouldIncludeNode).reduce((children: React.ReactNodeArray, child, index) => {
       if (children.length === 0) {
         return [child]
       }
