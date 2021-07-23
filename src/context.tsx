@@ -1,30 +1,24 @@
 import React from 'react'
 
-import { BaseProps } from './interfaces/BaseProps'
+import { BaseProps } from './types/BaseProps'
 
 export interface Props extends BaseProps {
   readonly debug?: boolean
-  readonly debugColor?: string
 }
 
-// TODO
+// TODO? undefined
 export const LayoutContext = React.createContext<Props>({
-  padding: undefined,
-  spaces: undefined,
-  arrayDivision: undefined,
-  omitNull: undefined, // TODO
-  // omitElements: [null, React.Fragment],
-  // omitElements: React.Fragment,
+  spacing: undefined,
+  align: undefined,
+  horizontal: false,
   debug: false,
-  debugColor: undefined,
-  // debugColor: {
-  //   stack: '#f00',
-  //   spacer: '#000',
-  // }
 })
 
 LayoutContext.displayName = 'LayoutContext'
 
-export const LayoutProvider: React.FC<Props> = ({ children, ...props }) => (
+export const LayoutProvider = ({
+  children,
+  ...props
+}: Props & { readonly children: React.ReactNode }) => (
   <LayoutContext.Provider value={props}>{children}</LayoutContext.Provider>
 )
