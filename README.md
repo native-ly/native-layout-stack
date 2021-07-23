@@ -66,11 +66,11 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 ### Stack
 
-Stack extends ViewProps and implements all [`LayoutProvider`](#layoutprovider) props without `debug`
+Stack extends [ViewProps](https://reactnative.dev/docs/view#props) and implements all [`LayoutProvider`](#layoutprovider) props without `debug`
 
 ### Spacer
 
-Component uses ViewProps
+Component uses [ViewProps](https://reactnative.dev/docs/view#props)
 
 ### Types
 
