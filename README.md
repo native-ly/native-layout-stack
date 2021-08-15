@@ -46,7 +46,7 @@ $ yarn add native-layout-stack
 
 ## Getting Started
 
-**• Connect libary with project using ES6 import:**
+**• Connect library with project using ES6 import:**
 
 ```js
 import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
