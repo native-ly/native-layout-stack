@@ -81,6 +81,8 @@ Component uses ViewProps
 ## Example
 
 ```jsx
+import React from 'react'
+import { View } from 'react-native'
 import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 
 const MyComponent = () => {
