@@ -1,11 +1,12 @@
-# [native-layout-stack](https://github.com/native-ly/native-layout-stack)
+# [Native Layout Stack](https://github.com/native-ly/native-layout-stack)
 
-[![NPM version](https://img.shields.io/npm/v/native-layout-stack?style=flat-square)](https://www.npmjs.com/package/native-layout-stack)
-[![NPM downloads](https://img.shields.io/npm/dm/native-layout-stack?style=flat-square)](https://www.npmjs.com/package/native-layout-stack)
-[![NPM license](https://img.shields.io/npm/l/native-layout-stack?style=flat-square)](https://www.npmjs.com/package/native-layout-stack)
+[![NPM version](https://flat.badgen.net/npm/v/native-layout-stack)](https://www.npmjs.com/package/native-layout-stack)
+[![NPM downloads](https://flat.badgen.net/npm/dm/native-layout-stack)](https://www.npmjs.com/package/native-layout-stack)
+[![NPM license](https://flat.badgen.net/npm/license/native-layout-stack)](https://www.npmjs.com/package/native-layout-stack)
 [![run in expo snack](https://img.shields.io/badge/Run%20in%20Snack-4630EB?style=flat-square&logo=EXPO&labelColor=FFF&logoColor=000)](https://snack.expo.io/@jbiesiada/native-layout-stack)
-[![Codecov](https://img.shields.io/codecov/c/github/native-ly/native-layout-stack?style=flat-square)](https://codecov.io/gh/native-ly/native-layout-stack)
-[![Travis](https://img.shields.io/travis/com/native-ly/native-layout-stack/main?style=flat-square)](https://travis-ci.com/native-ly/native-layout-stack)
+[![Codecov](https://flat.badgen.net/codecov/c/github/native-ly/native-layout-stack)](https://codecov.io/gh/native-ly/native-layout-stack)
+[![Travis](https://flat.badgen.net/travis/native-ly/native-layout-stack)](https://travis-ci.com/native-ly/native-layout-stack)
+[![Bundle size](https://flat.badgen.net/packagephobia/install/native-layout-stack)](https://packagephobia.com/result?p=native-layout-stack)
 
 ## About
 
@@ -13,7 +14,7 @@
 
 ### Idea
 
-This library recreates SwiftUI components in React Native:
+This library recreates the SwiftUI components in React Native:
 
 **Stack**
 
@@ -46,7 +47,7 @@ $ yarn add native-layout-stack
 
 ## Getting Started
 
-**• Connect libary with project using ES6 import:**
+**Connect the library with the project using ES6 import:**
 
 ```js
 import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
@@ -60,8 +61,6 @@ import { LayoutProvider, Stack, Spacer } from 'native-layout-stack'
 | ------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | padding       | Space or [Space] or [Space, Space] or [Space, Space, Space] or [Space, Space, Space, Space] | Outer space                                       |
 | spaces        | Space                                                                                       | Space between children                            |
-| omitNull      | boolean                                                                                     | Skip elements that are `null` or `React.Fragment` |
-| arrayDivision | boolean                                                                                     |                                                   |
 | debug         | boolean                                                                                     | Add random color to spaces                        |
 
 ### Stack
