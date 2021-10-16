@@ -2,8 +2,8 @@ import randomColor from 'randomcolor'
 
 import { useStack } from '.'
 
-export const useDebugStyle = () => {
-  const { debug } = useStack()
+export const useDebugStyle = (debug?: boolean) => {
+  const { debug: globalDebug } = useStack()
 
-  return debug ? { backgroundColor: randomColor() } : undefined
+  return debug ?? globalDebug ? { backgroundColor: randomColor() } : undefined
 }

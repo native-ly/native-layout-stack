@@ -7,6 +7,7 @@ export interface Props extends BaseProps {
 }
 
 // TODO? undefined
+// export const LayoutContext = React.createContext<Props | undefined>(undefined)
 export const LayoutContext = React.createContext<Props>({
   spacing: undefined,
   align: undefined,

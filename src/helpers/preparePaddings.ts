@@ -11,6 +11,7 @@ export const preparePaddings = (
 ): ViewStyle => {
   const color = randomColor()
 
+  // TODO || -> ??
   if (typeof paddings === 'number' || typeof paddings === 'string') {
     return debug
       ? { borderWidth: typeSafePaddings(paddings), borderColor: color }

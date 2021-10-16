@@ -5,8 +5,8 @@ import { useDebugStyle } from '../hooks'
 
 interface Props extends ViewProps {}
 
-export const Spacer = ({ style, ...props }: Props) => {
-  const debugStyle = useDebugStyle()
+export const Spacer = ({ style, debug, ...props }: Props) => {
+  const debugStyle = useDebugStyle(debug)
 
   return (
     <View
