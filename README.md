@@ -29,6 +29,7 @@ This library recreates SwiftUI components in React Native:
 - [Stacks](https://github.com/mobily/stacks/) by [Marcin Dziewulski](https://github.com/mobily/)
 - [react-native-divisible-view](https://github.com/kangsu-dev/react-native-divisible-view/) by [kangsu](https://github.com/kangsu-dev/)
 - [React Native Spacing System](https://github.com/hirokazutei/react-native-spacing-system/) by [Hirokazu Nakano Tei](https://github.com/hirokazutei/)
+- [react-native-stacks](https://github.com/andrew-levy/react-native-stacks/) by [Andrew Levy](https://github.com/andrew-levy/)
 
 ## How to Install
 
